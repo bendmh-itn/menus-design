@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav {
+    position: relative;
+    width: 220px;
+    /* Largeur du conteneur du menu */
+    height: 220px;
+    /* Hauteur du conteneur du menu */
+    margin: 20px auto;
+    /* Centrer le menu */
+    border-radius: 50%;
+    /* Forme circulaire */
+    overflow: hidden;
+    /* Cacher les débordements */
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translate(-20%, -20%);
+    /* Centrer le menu */
+}
+
+.menu li {
+    position: absolute;
+    width: 100px;
+    /* Largeur des éléments du menu */
+    height: 100px;
+    /* Hauteur des éléments du menu */
+    text-align: center;
+    line-height: 100px;
+    /* Centrer le texte verticalement */
+    border-radius: 50%;
+    /* Forme circulaire pour chaque élément */
+    transition: transform 0.3s;
+    /* Animation pour l'effet de survol */
+}
+
+.menu li a {
+    display: block;
+    /* Prendre tout l'espace de l'élément */
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    /* S'assurer que le lien prend toute la largeur */
+}
+
+.menu li:nth-child(1) {
+    /* Permet de récupérer l'élément enfant n°1 */
+    transform: rotate(0deg) translate(80px) rotate(0deg);
+    background-color: #FF5733;
+    /* Couleur de l'élément 1 */
+}
+
+.menu li:nth-child(2) {
+    transform: rotate(72deg) translate(80px) rotate(-72deg);
+    /* Le premier rotate permet de tourner l'élément à la position 72deg le translate le déplace par rapport au centre et le deuxième rotate tourne le texte pour le remettre droit */
+    background-color: #33FF57;
+    /* Couleur de l'élément 2 */
+}
+
+.menu li:nth-child(3) {
+    transform: rotate(144deg) translate(80px) rotate(-144deg);
+    /* Transform utilise les attributs l'un après l'autre : rotate puis translate puis rotate de nouveau */
+    background-color: #3357FF;
+    /* Couleur de l'élément 3 */
+}
+
+.menu li:nth-child(4) {
+    transform: rotate(216deg) translate(80px) rotate(-216deg);
+    background-color: #F0E68C;
+    /* Couleur de l'élément 4 */
+}
+
+.menu li:nth-child(5) {
+    transform: rotate(288deg) translate(80px) rotate(-288deg);
+    background-color: #FF33A1;
+    /* Couleur de l'élément 5 */
+}
+
+.menu li:hover {
+    transform: scale(1.1);
+    /* Agrandit l'élément légèrement et le renvoi à sa place puisqu'on annule la propriété transform mis ci-dessus */
+    /* Effet d'agrandissement au survol */
+    z-index: 1;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box; /* Cette propriété permet de donner des largeurs et hauteurs en prenant en compte le padding */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav {
+    position: relative; /* La nav est placé relativement à sa place par rapport sa place d'origine. Cette propriété est indispensable en mobile */
+}
+
+.menu {
+    list-style-type: none; /* Retirer les puces */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Permet de mettre les éléments côte à côte */
+    justify-content: center; /* Permet de centrer les éléments dans la div */
+    align-items: center; /* Permet de centrer verticalement les éléments dans la div */
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.3s, transform 0.3s; /* Permet que le hover sur le menu n'apparaisse pas trop vite */
+    border-radius: 5px; /* Arrondi sur le menu */
+}
+
+.menu a:hover { /* Lorsque mon curseur passe au dessus du lien */
+    background-color: #4CAF50;
+    transform: scale(1.05); /* Agrandi légèrement le menu séléectionné */
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Styles pour le menu hamburger */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.menu-icon .bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s;
+}
+
+/* Styles pour les écrans plus petits */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        /* Cacher le menu par défaut */
+        flex-direction: column;
+        /* Passer en disposition verticale */
+        background-color: #333;
+        position: absolute; /* L'élément est placé par rapport à l'élément parent */
+        top: 60px;
+        /* Positionner juste en dessous de l'en-tête */
+        left: 0;
+        right: 0;
+        border-radius: 5px;
+        z-index: 1; /* Permet de mettre le menu au dessus du texte */
+    }
+
+    #menu-toggle:checked+.menu-icon+.menu { /* Quand le petit élément est checked, je récupère l'élément menu-icon + menu et j'affiche le menu */
+        display: flex;
+        /* Afficher le menu lorsqu'il est coché */
+    }
+
+    .menu-icon {
+        display: flex;
+        /* Afficher l'icône de menu hamburger */
+    }
+
+    .menu a {
+        padding: 15px;
+        /* Padding ajusté pour les éléments de menu */
+        border-bottom: 1px solid #444;
+        /* Séparateur entre les éléments du menu */
+    }
+
+    .menu a:last-child {
+        border-bottom: none;
+        /* Enlever le séparateur pour le dernier élément */
+    }
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

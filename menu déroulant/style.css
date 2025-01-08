@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    font: 12px Arial;
+}
+
+.menu {
+    height: 60px;
+    list-style: none;
+    padding: 10px;
+    margin: 40px;
+}
+
+.menu li {
+    float: left; /* Permet de mettre les li du menu l'un à coté de l'autre */
+    width: 200px;
+    background-color: #293245;
+}
+
+.menu li:hover {
+    background-color: #199BD2;
+}
+
+/* Pour chaque lien visité ou non */
+.menu li a:link,
+.menu li a:visited {
+    display: block;
+    color: #FFF;
+    padding: 6px 10px;
+    border-right: 1px solid #FFF; /* Permet de mettre la ligne blanche entre chaque li */
+    text-align: center;
+    text-decoration: none; /* Permet de retirer le soulignement */
+}
+
+.menu li a:active { /* Quand je clique sur le lien */
+    background-color: #808080; 
+}
+
+.menu .sousmenu {
+    list-style-type: none; /* Retirer la puce */
+    display: none; /* Permet de ne pas afficher les éléments des sous-menu */
+    padding: 0;
+    margin: 0;
+}
+
+.menu .sousmenu li {
+    float: none; /* Permet qu'il reste l'un en dessous de l'autre */
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+
+.menu .sousmenu li a:link,
+.menu li a:visited {
+    display: block;
+    color: #FFF;
+    text-decoration: none;
+    background-color: #808080;
+}
+
+.menu .sousmenu li a:hover { /* Quand mon curseur passe au dessus du lien du sous-menu */
+    background-color: #199BD2;
+}
+
+.menu li:hover .sousmenu { /* Quand mon curseur passe au dessus du lien du menu on fait apparaitre le sous menu */
+    display: block;
+}
